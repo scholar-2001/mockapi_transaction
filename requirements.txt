@@ -1,0 +1,9 @@
+streamlit
+pandas
+joblib
+pymysql
+sqlalchemy
+scikit-learn
+xgboost
+Flask
+flask-cors
