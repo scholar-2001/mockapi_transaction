@@ -16,11 +16,11 @@ model_filename = 'fraud_detection_model.joblib'
 clf = joblib.load(model_filename)
 
 # MySQL database connection parameters
-host = st.secrets["db_host"]
-user = st.secrets["db_admin"]
-password = st.secrets["db_password"]
-database = st.secrets["db_database"]
-port = st.secrets["db_port"]
+host = st.secrets["DB_HOST"]
+user = st.secrets["DB_ADMIN"]
+password = st.secrets["DB_PASSWORD"]
+database = st.secrets["DB_DATABASE"]
+port = st.secrets["DB_PORT"]
 # Create a MySQL connection
 engine = create_engine(f"mysql+pymysql://{user}:{password}@{host}:{port}/{database}")
 
@@ -31,7 +31,7 @@ balance_1 = 0
 address = ""
 # Streamlit app
 def get_geolocation(ip_address):
-    api_key = st.secrets["db_api"]  # Replace with your ipinfo.io API key
+    api_key = st.secrets["DB_API"]  # Replace with your ipinfo.io API key
     url = f'https://ipinfo.io/{ip_address}?token={api_key}'
     response = requests.get(url)
     data = response.json()
